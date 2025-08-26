@@ -6,7 +6,7 @@ from datetime import datetime
 from utils import custom_paginate_and_render, render_block, list_stock_files_by_type
 from storage import OUTPUT_STOCK_COMMENTS
 from score_stock_comments import StockCommentScorer
-from history_comment_llm import ai_smart_search, clear_embedding_cache
+from history_comment_llm import ai_smart_search
 
 # 配置日志
 import logging
@@ -95,37 +95,12 @@ def render():
 
                     # 处理搜索请求
                     if search_button and keyword:
-                        # 提供API密钥输入区域
-                        with st.expander("API密钥设置 (可选)"):
-                            user_api_keys_input = st.text_area(
-                                "输入API密钥（多个密钥用逗号分隔）",
-                                value="",
-                                height=100,
-                                help="输入您自己的API密钥可以避免免费额度用尽的问题"
-                            )
-                            
-                            # 解析用户输入的API密钥
-                            if user_api_keys_input:
-                                user_api_keys = [key.strip() for key in user_api_keys_input.split(',') if key.strip()]
-                            else:
-                                user_api_keys = None
-                        
-                        # 添加清除缓存按钮
-                        if st.button("清除嵌入向量缓存", type="secondary"):
-                            clear_embedding_cache()
-                            st.success("嵌入向量缓存已清除")
-                            # 重新加载页面
-                            st.experimental_rerun()
-                        
                         # 使用基于embedding的AI智能搜索
                         st.info("正在进行AI智能搜索，请稍候...")
                         try:
                             with st.spinner("正在计算评论相关性..."):
-                                # 如果用户提供了API密钥，使用它们
-                                if user_api_keys:
-                                    results = ai_smart_search(comments, keyword, custom_api_keys=user_api_keys)
-                                else:
-                                    results = ai_smart_search(comments, keyword)
+                                # 使用AI智能搜索
+                                results = ai_smart_search(comments, keyword, custom_api_keys=None)
 
                             # 格式化显示结果
                                 blocks = []
@@ -153,11 +128,7 @@ def render():
                                 auto_disappear_notification(f"找到 {len(blocks)} 条与'{keyword}'相关的评论")
                                 custom_paginate_and_render(blocks, f"history_keyword_search_{code}_{keyword}", render_block, page_size=20)
                         except Exception as e:
-                                error_message = str(e)
-                                if "Incompatible dimension" in error_message or "维度不匹配" in error_message:
-                                    st.error("搜索失败: 向量维度不匹配。这可能是由于缓存中存在不同维度的嵌入向量。\n请尝试点击上方的'清除嵌入向量缓存'按钮后重试。")
-                                else:
-                                    st.error(f"AI智能搜索失败: {error_message}")
+                                st.error(f"AI智能搜索失败: {str(e)}")
                     # 非搜索按钮点击，但有历史搜索结果
                     elif st.session_state.get('history_search_results') and st.session_state.get('history_last_search_keyword') == keyword:
                         # 显示历史搜索结果
