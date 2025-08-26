@@ -416,19 +416,6 @@ def get_comment_llm(custom_api_keys=None):
         _comment_llm_instance = CommentLLMSearch(custom_api_keys=custom_api_keys)
     return _comment_llm_instance
 
-def clear_embedding_cache():
-    """清除嵌入向量缓存"""
-    global _comment_llm_instance
-    if _comment_llm_instance:
-        _comment_llm_instance.embeddings_cache = {}
-        try:
-            if os.path.exists(_comment_llm_instance.cache_file):
-                os.remove(_comment_llm_instance.cache_file)
-            logger.info("嵌入向量缓存已清除")
-        except Exception as e:
-            logger.error(f"清除缓存文件失败: {e}")
-    return True
-
 # 基于embedding的AI智能搜索功能，与history_track_llm类似
 def ai_smart_search(comments, keywords, top_k=50, custom_api_keys=None):
     """使用embedding搜索相关性高的评论，与history_track_llm类似的实现方式"""
