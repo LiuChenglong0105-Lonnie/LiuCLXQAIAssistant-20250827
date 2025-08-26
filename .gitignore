@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+chromedriver-win64/
+.env
+cookie.txt
+crawl_progress.txt
+user_urls.txt
+id_name_match.txt
+history_comments/
+history_comments_txt/
+history_track/
+history_track_txt/
+*.log
+*.pyc
+comment_embeddings_cache.json
+embeddings_cache.json
+chromedriver_test_screenshot.png
+
+# 不忽略必要的文件
+!requirements.txt
+!*.py
+!.gitignore
+!.env.example
+!README.md
