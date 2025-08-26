@@ -62,7 +62,7 @@ def render():
 
     # 第一列放置采集按钮
     with col1:
-        if st.button("开始采集评论"):
+        if st.button("开始采集评论（勿点！线上不支持爬虫！）"):
             if not stock_code:
                 st.warning("请正确输入股票代码")
             else:
@@ -297,4 +297,5 @@ def render():
                     from utils import auto_disappear_notification
                     auto_disappear_notification(f"已加载 {selected_archive['stock_code']} 的历史存档", "success")
                 else:
+
                     st.error("加载历史存档失败")
