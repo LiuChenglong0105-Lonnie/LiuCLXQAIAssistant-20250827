@@ -47,7 +47,7 @@ def render():
         if st.button("清空选择", use_container_width=True, key="clear_btn"):
             st.session_state.selected_users = []
     with col3:
-        if st.button("开始爬取", use_container_width=True, key="crawl_btn"):
+        if st.button("开始爬取（勿点！线上不支持爬虫！）", use_container_width=True, key="crawl_btn"):
             if not selected_user_ids or not start_date:
                 st.warning("请先选择用户和日期！")
             else:
@@ -144,5 +144,6 @@ def load_ai_analysis_results(file_path=None):
     except Exception as e:
         logger.error(f"加载AI分析结果文件时发生错误: {e}")
         return None
+
 
 # 从utils.py导入parse_article_block函数
