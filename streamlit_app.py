@@ -6,7 +6,7 @@ from pages.recent_comment import render as render_recent_comment
 from pages.history_comment import render as render_history_comment
 
 # 设置页面配置
-st.set_page_config(page_title="雪球智能研究助手", layout="wide")
+st.set_page_config(page_title="雪球智能爬虫与AI研究助手", layout="wide")
 
 # 加载ID-名称映射
 ID_NAME_FILE = 'id_name_match.txt'
