@@ -14,11 +14,11 @@ id_name_map = load_id_name_map(ID_NAME_FILE)
 
 # 侧边栏功能选择
 with st.sidebar:
-    st.title("雪球智能研究助手")
+    st.title("雪球智能爬虫与AI研究助手")
     # 可以添加或修改这里的内容
     main_func = st.radio(
         "功能选择",
-        ["关注用户近期跟踪", "关注跟踪历史存档", "股票评论现时抓取", "股评抓取历史存档"],
+        ["关注用户近期跟踪", "关注跟踪历史存档", "股票评论现时抓取", "股票评论历史存档"],
         key="main_func_radio"
     )
 
@@ -29,5 +29,5 @@ elif st.session_state.main_func_radio == "关注跟踪历史存档":
     render_track_history()
 elif st.session_state.main_func_radio == "股票评论现时抓取":
     render_recent_comment()
-elif st.session_state.main_func_radio == "股评抓取历史存档":
+elif st.session_state.main_func_radio == "股票评论历史存档":
     render_history_comment()
