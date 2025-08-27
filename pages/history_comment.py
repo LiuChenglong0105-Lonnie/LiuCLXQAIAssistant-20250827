@@ -21,7 +21,7 @@ def get_scorer():
     return _scorer_instance
 
 def render():
-    st.header("股评抓取历史存档")
+    st.header("股票评论历史存档")
 
     # 初始化会话状态
     if "history_reading_mode" not in st.session_state:
