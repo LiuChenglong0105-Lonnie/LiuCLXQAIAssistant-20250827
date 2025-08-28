@@ -31,22 +31,23 @@ XQ是我个人投资体系的根基，我需要大量使用XQ。然而在使用X
 ## 应用功能与开发流程图
 
 ### 整体应用运行总流程
-<img width="2379" height="1128" alt="d3e78ea1fb94ea06bd3ade57bfe008f" src="https://github.com/user-attachments/assets/9cf5cb64-4a22-4273-87d7-3ff0fa84074a" />
+<img width="2379" height="1128" alt="d3e78ea1fb94ea06bd3ade57bfe008f" src="https://github.com/user-attachments/assets/8ea254e4-058a-4d85-8066-2f9d26f6ed92" />
 
 ### 关注用户近期跟踪
-<img width="2539" height="1078" alt="5f3e9e85960118c21faf6f209a1f015" src="https://github.com/user-attachments/assets/d568facd-e4a6-4f8c-a031-046592a2d05a" />
+<img width="2539" height="1078" alt="5f3e9e85960118c21faf6f209a1f015" src="https://github.com/user-attachments/assets/aaafa4e7-fb8c-4f33-ba1f-9a29bea45e31" />
 
 ### 关注跟踪历史存档
-<img width="1681" height="1735" alt="65ebed766c181c146d4a70878ddb94d" src="https://github.com/user-attachments/assets/5b09c501-5994-49d1-ac2d-bfc0a23b1a82" />
+<img width="1681" height="1735" alt="65ebed766c181c146d4a70878ddb94d" src="https://github.com/user-attachments/assets/d22135ad-6fac-48dc-b5b4-6ed6daaf032c" />
 
 ### 股票评论现时抓取
-<img width="1396" height="1483" alt="c44e1b17d83aa61de1775e257a0d837" src="https://github.com/user-attachments/assets/8cc45afe-4d90-42a5-b656-1220cafe987e" />
+<img width="3172" height="1206" alt="deabcf63946d1bfca36bb9021f9c700" src="https://github.com/user-attachments/assets/fa3e6aee-7949-4306-98eb-152c628adba8" />
 
 ### 股评抓取历史存档
-<img width="1839" height="1768" alt="39b9a6a96d53a42dc734f432969ea9b" src="https://github.com/user-attachments/assets/06c7022d-8db4-42fe-a1cf-eeaf9c5c4005" />
+<img width="1396" height="1483" alt="c44e1b17d83aa61de1775e257a0d837" src="https://github.com/user-attachments/assets/a444da10-ddcd-4299-86ff-79dbd99f7522" />
 
 ### 通用支撑模块流程
-<img width="2115" height="769" alt="323884f7226558485ac71562b4880cc" src="https://github.com/user-attachments/assets/c97c1053-34f9-438b-9b13-8f05a79e9802" />
+<img width="2115" height="769" alt="323884f7226558485ac71562b4880cc" src="https://github.com/user-attachments/assets/7bd16cab-d049-44f3-81d8-444d7f4b7343" />
+
 
 ## 项目结构
 
